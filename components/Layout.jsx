@@ -1,17 +1,20 @@
 import React from "react";
-import Header from "./Header";
 import { Outlet } from "react-router-dom";
-import Footer from "./Footer";
+import Sidebar from "./Sidebar";
+import TopBar from "./TopBar";
+import TopBar2 from "./TopBar2";
 
 const Layout = () => {
   return (
-    <>
-      <Header />
-      <main className="mx-auto max-w-7xl">
+    <div className="flex flex-row h-screen w-screen">
+      <div className="basis-1/12 sm:basis-2/12">
+        <Sidebar />
+      </div>
+      <div className="basis-11/12 sm:basis-10/12 flex flex-col">
+        <TopBar2 />
         <Outlet />
-      </main>
-      <Footer />
-    </>
+      </div>
+    </div>
   );
 };
 
